@@ -9,7 +9,7 @@ def percentiles(x, q):
     output = []
     
     for perc in percentiles: 
-        output.append(np.percentile(X, perc))
+        output.append(np.percentile(X, perc, method='linear'))
 
     return np.array(output, dtype=np.float64)
         
