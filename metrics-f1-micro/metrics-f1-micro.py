@@ -8,6 +8,15 @@ def f1_micro(y_true, y_pred) -> float:
     if y_true.shape[0] != y_pred.shape[0]:
         return None
 
-    tp = sum((y_true == y_pred).astype(int))
+    labels = np.unique(np.concatenate([y_true, y_pred]))
+    tp = fp = fn = 0
 
-    return (2 * tp) / (2 * tp + 2 * (y_true.shape[0] - tp))
+    for label in labels:
+        tp += np.sum((y_true == label) & (y_pred == label))
+        fp += np.sum((y_true != label) & (y_pred == label))
+        fn += np.sum((y_true == label) & (y_pred != label))
+
+    if tp + fp + fn == 0:
+        return 1.0
+    else:
+        return 2 * tp / (2 * tp + fp + fn)
