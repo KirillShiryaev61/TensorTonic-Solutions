@@ -7,7 +7,7 @@ def majority_classifier(y_train, X_test):
     train = np.asarray(y_train)
     test = np.asarray(X_test)
     
-    unique, counts = np.unique(train, return_counts=True)
+    _, counts = np.unique(train, return_counts=True)
     major_class = train[np.argmax(counts)]
 
     return np.full((test.shape[0],), major_class)
