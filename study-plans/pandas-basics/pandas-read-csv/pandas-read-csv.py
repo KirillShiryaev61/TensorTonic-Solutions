@@ -6,7 +6,7 @@ def create_dataframe(data):
     """
     df = pd.DataFrame(data)
     output = {
-        'data': data,
+        'data': df.to_dict('list'),
         'shape': list(df.shape),
         'columns': list(df.columns)
     }
