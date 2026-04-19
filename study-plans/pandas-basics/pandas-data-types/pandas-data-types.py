@@ -6,10 +6,7 @@ def data_types_overview(data):
     """
     df = pd.DataFrame(data)
     dtypes = {col: str(dtype) for col, dtype in df.dtypes.items()}
-    type_columns = pd.Series(dtypes, name='type')\
-                     .to_frame()\
-                     .groupby('type')['type'].count()\
-                     .to_dict()
+    type_columns = df.dtypes.astype(str).value_counts().to_dict()
     return {
         'dtypes': dtypes,
         'type_counts': type_columns,
