@@ -1,0 +1,6 @@
+-- Write your SQL query here
+SELECT month,
+       revenue,
+       LAG(revenue, 1, 0) OVER (ORDER BY id) AS prev_revenue,
+       revenue - LAG(revenue, 1, 0) OVER (ORDER BY id) AS revenue_change
+FROM monthly_revenue
