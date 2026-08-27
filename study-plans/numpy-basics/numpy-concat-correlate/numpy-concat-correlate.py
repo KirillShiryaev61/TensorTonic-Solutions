@@ -5,6 +5,6 @@ def compare_correlations(a, b):
     a = np.array(a, dtype=np.float64)
     b = np.array(b, dtype=np.float64)
     groups = [a, b, np.concatenate([a, b], axis=0)]
-    return np.array(
+    return np.stack(
         [np.corrcoef(array, rowvar=False) for array in groups]
     )
