@@ -11,9 +11,7 @@ def activate(x, method="relu"):
     elif method == 'sigmoid':
         result = 1 / (1 + torch.exp(-x))
     elif method == 'tanh':
-        exp_pos = torch.exp(x)
-        exp_neg = torch.exp(-x)
-        result = (exp_pos - exp_neg) / (exp_pos + exp_neg)
+        result = torch.tanh(x)
     elif method == 'leaky_relu':
         result = torch.where(x > 0, x, x * 0.01)
     else:
