@@ -6,7 +6,7 @@ def vector_norms(v: list) -> np.ndarray:
     """
     v = np.array(v, dtype=np.float64)
     return np.array([
-        np.abs(v).sum(),
-        np.sqrt(np.sum(v**2)),
-        np.abs(v).max()
+        np.linalg.norm(v, ord=1),
+        np.linalg.norm(v, ord=2),
+        np.linalg.norm(v, ord=np.inf)
     ])
