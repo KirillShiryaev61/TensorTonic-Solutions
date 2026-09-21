@@ -7,4 +7,4 @@ def outer_product(u: list, v: list) -> np.ndarray:
     u = np.array(u, dtype=np.float64)
     v = np.array(v, dtype=np.float64)
 
-    return u[:, None] * v[None, :]
+    return np.outer(u, v)
