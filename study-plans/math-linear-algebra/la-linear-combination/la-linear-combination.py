@@ -6,5 +6,4 @@ def linear_combination(vectors: list, coefficients: list) -> np.ndarray:
     """
     vectors = np.array(vectors, dtype=np.float64)
     coef = np.array(coefficients, dtype=np.float64)
-    comb = vectors * coef[:, None]
-    return comb.sum(axis=0)
+    return coef @ vectors
