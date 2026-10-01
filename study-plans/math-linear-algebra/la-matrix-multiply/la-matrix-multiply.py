@@ -6,4 +6,4 @@ def matrix_multiply(A: list, B: list) -> np.ndarray:
     """
     A = np.array(A, dtype=np.float64)
     B = np.array(B, dtype=np.float64)
-    return np.dot(A, B)
+    return A @ B
