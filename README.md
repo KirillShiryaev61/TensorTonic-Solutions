@@ -50,6 +50,7 @@ Verified machine learning implementations completed on [TensorTonic](https://www
 | Matrix-Vector Multiply | Multiply a NumPy matrix by a compatible vector, producing one row-wise dot product per output element. | https://www.tensortonic.com/problems/la-matrix-vector-multiply |
 | Outer Product | Compute the NumPy outer product of two vectors as a matrix containing every pairwise element multiplication. | https://www.tensortonic.com/problems/la-outer-product |
 | Vector Norms | Compute L1, L2, and infinity norms for a one-dimensional NumPy vector and return them in a float64 array. | https://www.tensortonic.com/problems/la-vector-norms |
+| Vector Projection | The vector projection of u onto v is the component of u that lies exactly along the direction of v. | https://www.tensortonic.com/problems/la-vector-projection |
 | Lag Features | Generate lagged time-series features for specified offsets with defined padding for unavailable history. | https://www.tensortonic.com/problems/lag-features |
 | Implement Leaky ReLU (with α) | Apply Leaky ReLU element-wise with a configurable negative slope while retaining positive inputs. | https://www.tensortonic.com/problems/leaky-relu |
 | Implement Majority Class Classifier | Fit a majority-class baseline and predict the most frequent training label for every requested sample. | https://www.tensortonic.com/problems/majority-classifier |
