@@ -10,11 +10,9 @@ def gram_schmidt(vectors: list) -> np.ndarray:
     for i in range(n_rows):
         norm = np.linalg.norm(Q[i, :])
         if norm < 1e-12:
-            raise ValueError(f'Вектор {i} линейно зависим')
+            raise ValueError(f"Вектор {i} линейно зависимый.")
         Q[i, :] /= norm
-
         for j in range(i + 1, n_rows):
-            proj_coef = Q[i, :] @ Q[j, :].T
+            proj_coef = Q[i, :] @ Q[j, :]
             Q[j, :] -= proj_coef * Q[i, :]
     return Q
-        
